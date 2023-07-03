@@ -1,0 +1,132 @@
+Escena 1:
+	this.textArea = new cjs.Text("When the jaguar\nlost its spots", "bold 40px 'Gluten'");
+	this.text = new cjs.Text("Todos los derechos reservados para el equipo de trabajo de EDO 2022. Proyecto financiado por PRODEP México 2017-2023.", "10px 'Didact Gothic'", "#005EAC");
+
+Escena 3:
+	this.textArea = new cjs.Text("when Balam descended from the mountain towards the river, he walked majestic, imposing, used to his beauty.", "bold 20px 'Montserrat'");
+    
+Escena 4:
+	this.textArea = new cjs.Text("When he arrived he could not believe what he saw in his reflection on the river bank, he had no spots.", "bold 20px 'Montserrat'");
+
+Escena 7:
+	this.textAreaN = new cjs.Text("\"How was that possible? A jaguar without spots?\"", "bolder 19px 'Montserrat'", "#FFFFFF");
+	this.textArea2 = new cjs.Text("\"What if when he approached his face to the calm waters of the lake the spots did not appear either?\"", "bolder 19px 'Montserrat'", "#FFFFFF");
+
+Escena 13:
+	this.textArea2 = new cjs.Text("\"What do mocking monkeys see me!\"", "bolder 19px 'Montserrat'");
+
+Escena 22:
+	this.textArea = new cjs.Text("in the direction of the burned sticks, he took one almost completely black...\n\n...and carried it in his trunk while jumping the fence, fortunately...\n\n...no one noticed.", "bold 21px 'Montserrat'", "#FFFFFF");
+
+Escena 23:
+	this.textArea = new cjs.Text("He sat calmly and carefully applied soot all over his body to simulate his spots.", "bolder 21px 'Montserrat'", "#FFFFFF");
+
+Escena 24:
+	this.textArea = new cjs.Text("When he finished, he showed himself proud walking through the jungle, but as if it were a curse it began to rain.", "bolder 21px 'Montserrat'", "#FFFFFF");
+
+Escena 25:
+	this.textArea = new cjs.Text("Balam ran to take refuge in the nearest cave, and being protected he realized how the tincture had disappeared from his body, the rain had washed away the stains and he was yellow as fire again.", "bold 20px 'Montserrat'", "#FFFFFF");
+
+Escena 26:
+	this.textArea1 = new cjs.Text("In the solitude and depth of the cave, Balam, could not contain himself and wept bitterly for his bad luck, until he fell deeply asleep and in his dreams he heard a voice telling him:", "bold 21px 'Montserrat'", "#FFFFFF");
+	this.textAreaD = new cjs.Text("\"Go up the hill, Yum Kaax will give you the answer,\"", "bolder 21px 'Montserrat'", "#FFFFFF");
+	this.textArea1 = new cjs.Text("the voice said over and over again.", "bold 21px 'Montserrat'", "#FFFFFF");
+
+Escena 27:
+	this.textAreaD = new cjs.Text("\"Go up the hill, Yum Kaax will give you the answer,\"", "bolder 21px 'Montserrat'", "#FFFFFF");
+	this.textArea1 = new cjs.Text("the voice said over and over again.", "bold 21px 'Montserrat'", "#FFFFFF");
+
+Escena 28:
+	this.textArea = new cjs.Text("On his way he met several animals, snakes, quetzals, cacomiztles, all were impressed to see their fur, without spots, completely yellow.", "19px 'Montserrat'", "#FFFFFF");
+
+Escena 29:
+	this.textAreaD = new cjs.Text("\"It's not Balam, he's a cougar.\"", "bold 20px 'Montserrat'", "#FFFFFF");
+
+Escena 30:
+	this.textArea = new cjs.Text("After hours of walking he reached the foot of the hill and stopped, Balam knew he was afraid, the stories said that spirits lived on this hill that took giant forms to attack those who tried to climb the temple of Yum Kaax.", "bold 18px 'Montserrat'", "#FFFFFF");
+
+Escena 31:
+	this.textArea1 = new cjs.Text("While he was waiting to take courage a cacomiztle appeared and stopped in front of him without saying anything, just watching him:", "16px 'Montserrat'", "#3F3500");
+	this.textAreaD = new cjs.Text("\"What's wrong with you?\"", "bolder 16px 'Montserrat'");
+	this.textArea2 = new cjs.Text("said Balam with annoyance.", "16px 'Montserrat'");
+
+Escena 32:
+	this.textAreaD1 = new cjs.Text("\"You are afraid.\"", "bolder 16px 'Montserrat'", "#FFFFFF");
+	this.textAreaD2 = new cjs.Text("\"Me? Hahahaha of course not, a jaguar is never afraid,\"", "bolder 16px 'Montserrat'", "#FFFFFF");
+
+Escena 33:
+	this.textAreaD1 = new cjs.Text("\"Then you don't need any help, well, it's time to go\"", "bolder 16px 'Montserrat'", "#FFFFFF");
+	this.textAreaD2 = new cjs.Text("\"Wait!\"", "bolder 16px 'Montserrat'", "#FFFFFF");
+
+Escena 34:
+	this.textAreaD = new cjs.Text("\"I think... uhm I need help\"", "bolder 17px 'Montserrat'", "#FFFFFF");
+
+Escena 35:
+	this.textArea = new cjs.Text("The cacomiztle put a necklace with a Ya'xkab Mayan blue gemstone around Balam's neck and asked him to keep it carefully, then he climbed a tree and simply disappeared.", "bold 17px 'Montserrat'", "#FFFFFF");
+
+Escena 36:
+	this.textArea = new cjs.Text("Balam began to climb the hill with fear, he felt that there were voice pronouncing his name, \n\nhe saw spirits in the shape of alebrijes that fluttered overhead, control his fear while he climbed through the complex terrain full of bushes, roots and rocks.", "bold 17px 'Montserrat'", "#FFFFFF");
+
+Escena 37:
+	this.textArea = new cjs.Text("He saw spirits in the shape of alebrijes that fluttered overhead, control his fear while he climbed through the complex terrain full of bushes, roots and rocks.", "bold 17px 'Montserrat'", "#FFFFFF");
+
+Escena 38:
+	this.textArea = new cjs.Text("The complex terrain full of bushes, roots and rocks. Suddenly he stumbed upon a stone when he saw it he realized that it was square, he whas surprised:", "bold 17px 'Montserrat'");
+	this.textAreaD = new cjs.Text("\"Stones are not square!\"", "bolder 18px 'Montserrat'");
+
+Escena 39:
+	this.textArea = new cjs.Text("But as he looked up he admired the immensity of that rock, perfectly delineated and realized that it served as a base for others equally large. He had arrived at the temple.", "17px 'Montserrat'");
+
+Escena 40:
+	this.textArea = new cjs.Text("He knew he should go up, surely Yum Kaax would give hime a solution to his problem, but it was not that simple.\n\nHe felt again that fear invaded him with more force, he was tired, he wanted to move, but his legs were shaking and he felt his vision blurring.", "bold 17px 'Montserrat'", "#FFFFFF");
+
+Escena 41:
+	this.textArea1 = new cjs.Text("He saw blurred figures, they looked like the bodies of animals that were in front of the temple.", "bold 20px 'Montserrat'", "#FFFFFF");
+	this.textArea2 = new cjs.Text("He could not move, he felt that he was not breathing and when he directed his gaze towards the entrance of the temple to locate himself, he noticed a python snake stuck in a trunk", "bold 19px 'Montserrat'", "#FFFFFF");
+
+Escena 42:
+	this.textArea = new cjs.Text("He could also distinguish the tapir Yumil circling, visibly exhausted, without knowing where go, further down were the two cacomiztles trying to scream without being able to suddenly achieve it. ", "bold 18px 'Montserrat'", "#FFFFFF");
+
+Escena 43:
+	this.textArea1 = new cjs.Text("They all stared at him with their eyes lit to the color of hematite red:", "19px 'Montserrat'", "#FFFFFF");
+	this.textArea2 = new cjs.Text("they shouted between laments as the advanced", "19px 'Montserrat'", "#FFFFFF");
+
+Escena 44:
+	this.textArea = new cjs.Text("Balam managed to take one or another step back, but the figures seemed closer and closer and their cries louder. When they seemed to be on top of Balam, he closed his eyes and shouted", "19px 'Montserrat'", "#FFFFFF");
+
+Escena 45:
+	this.textArea = new cjs.Text("Huge tears trickled from his eyes, he covered his head with his claws, expecting the worst.", "17px 'Montserrat'", "#FFFFFF");
+
+Escena 46:
+	this.textArea = new cjs.Text("However, the animals went up in smoke and the noise and panic disappeared with them.", "bold 18px 'Montserrat'", "#FFFFFF");
+
+Escena 47:
+	this.textArea = new cjs.Text("Balam got up slowly, wiped away his tears and observed that the corn plantsthat surrounded the pyramid were gigantic, an ear was almost his size, without thinking Balam began to climb the stairs of the themple quickly...", "bold 18px 'Montserrat'");
+
+Escena 48:
+	this.textArea = new cjs.Text("when he reached the last step he felt a strong blow to the face that left him thrown several stairs down, he did not know if they were spirits, but that was what they seemed, guardian spirits of the temple.", "bold 18px 'Montserrat'", "#FFFFFF");
+
+Escena 49:
+	this.textArea = new cjs.Text("He felt no pain or discomfort, so he got up and when he managed to focus his sight the moonlight illuminated his fur as if it were eekzamen, intense as if it were a great star, feeling calm he got up...", "bold 18px 'Montserrat'", "#FFFFFF");
+
+Escena 51:
+	this.textArea = new cjs.Text("and when he entered the temple he walked illuminating everything in his path, he stopped in front of an empty throne and said:", "bold 18px 'Montserrat'", "#FFFFFF");
+
+Escena 52:
+	this.textArea = new cjs.Text("The glow emitting from his fur moved as if it had a life of its own and he strode through the temple hall.\n\nStopping at the throne and taking the form of Yum Kaax, the question was heard:", "17px 'Montserrat'", "#FFFFFF");
+
+Escena 54:
+	this.textArea = new cjs.Text("You know that I am the guardian of his land and that my responsibility is to take care of all living beings from what could harm them.\n\nFor a long time many animals in the forest felt threatened, hurt, their joy was disappearing.", "bold 18px 'Montserrat'", "#FFFFFF");
+
+Escena 57:
+	this.textArea = new cjs.Text("To recover your stains the stars will come down from the sky every time you act with dignity on this earth.\n\nOver time, little by little life in the land of Yum Kaax regained its balance...", "bold 18px 'Montserrat'", "#FFFFFF");
+
+Escena 58:
+	this.textArea = new cjs.Text("until one morning Balam approached the waters that had once made him see his disgrace, but this time, the stars had descended to leave evidence...", "20px 'Montserrat'");
+
+Escena 59:
+	this.textArea = new cjs.Text("in his fur of the rewards deserved for every dignified and honorable attitude on earth.", "bold 20px 'Montserrat'", "#FFFFFF");
+
+Escena 61:
+	this.autores = new cjs.Text("- Ruth González Cruz\n- María del Carmen Nieves Hernández\n- Jessica Rodriguez Toriz\n- Heriberto Abraham Alonso Meléndez\n- (PENDIENTE DE AGREGAR 		MAS)", "bold 18px 'Gluten'", "#F6DC4E");
+

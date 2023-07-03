@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>Balam</title>
+
+<style>
+  #animation_container, #preloader {
+	position:absolute;
+	margin:auto;
+	left:0;right:0;
+	top:0;bottom:0;
+  }
+</style>
+
+<link rel="stylesheet" href="extras/style.css" type="text/css">
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script src="Balam.js?1687502935675"></script>
+<script>
+// Global Scripts
+	/*----------CONFIGURACION DE IDIOMA----------*/
+const ESP = true;
+const ENG = false;
+var idioma = ENG;
+function setText(textArea, textIngles, textEspaniol) {
+	textArea.text = idioma === ENG ? textIngles : textEspaniol;
+}
+/*----------CONTROL DE REPRODUCCION DE ESCENAS----------*/
+function stopAndRemove(target) {
+	target.removeAllEventListeners('tick');
+	target.removeAllEventListeners('click');
+	target.stop();
+}
+function setBackButton(contexto, boton, numFrame) {
+	boton.on('click', function() {
+		contexto.gotoAndStop(numFrame);
+	});
+}
+/*----------FUNCIONES DE ANIMACION----------*/
+function rotar(objeto, escena, velocidad, tope, stopAndPlay) {
+	if(stopAndPlay) escena.stop();
+	objeto.cursor = "pointer";
+	escena.addEventListener('tick', function(e) {
+		objeto.rotation += velocidad;
+		if(objeto.rotation >= tope) {
+			reiniciarRotacion(objeto, escena);
+			if(stopAndPlay) escena.play();
+			return;
+		}
+	});
+}
+function rotarIzquierdaDerecha(objeto, escena, velocidad, tope) {
+	var toRight = false;
+	var tope2 = tope;
+	if(Math.abs(objeto.rotation) != 0) {
+		tope += objeto.rotation;
+		tope2 -= objeto.rotation;
+	}
+	escena.addEventListener('tick', function(e) {
+		if(objeto.rotation == tope) {
+			toRight = true;
+		}
+		if(objeto.rotation == -tope2) {
+			toRight = false;
+		}
+		toRight ? objeto.rotation -=velocidad : objeto.rotation += velocidad;
+	});
+}
+function rotarIzquierdaDerechaAuto(objeto, escena, velocidad, tope, times) {
+	escena.stop();
+	var toRight = false;
+	var topeLeft = false;
+	var topeRight = false;	
+	var counter = 0.0;
+	escena.addEventListener('tick', function(e) {
+		if(objeto.rotation == tope) {
+			toRight = true;
+			topeLeft = true;
+			counter += 0.5;
+		}
+		if(objeto.rotation == -tope) {
+			toRight = false;
+			topeRight = true;
+			counter += 0.5;
+		}
+		toRight ? objeto.rotation -= velocidad : objeto.rotation += velocidad;
+		if((counter == times) && topeLeft && topeRight && objeto.rotation == 0) {
+			reiniciarRotacion(objeto, escena);
+			escena.play();
+		}		
+	});
+}
+function reiniciarRotacion(objeto, escena, rotacionInicial) {
+	escena.removeAllEventListeners('tick');
+	rotacionInicial ? objeto.rotation = rotacionInicial : objeto.rotation = 0;
+}
+function escalar(escena, object, stopAndPlay = false) {
+	const propsStart = {
+		scaleX: object.scaleX,
+		scaleY: object.scaleY,
+	};
+	const propsMax = {
+		scaleX: propsStart.scaleX * 1.5,
+		scaleY: propsStart.scaleY * 1.5,
+	};
+	const propsMin = {
+		scaleX: object.scaleX / 2,
+		scaleY: object.scaleY / 2,
+	};
+	if(stopAndPlay) escena.stop();
+	createjs.Tween.get(object).to(propsMax, 500)
+		.call(minimize);
+	function minimize() {
+		createjs.Tween.get(object).to(propsMin, 200).call(restart);
+	}
+	function restart() {		
+		createjs.Tween.get(object).to(propsStart, 500);
+		if(stopAndPlay) escena.play();
+	}
+}
+function rebote(escena, object, rebotes, distancia, velocidad, stopAndPlay, reset) {
+	const TIEMPOGOLPE = velocidad / 10;
+	const tiempoTotal = (rebotes)*(2 * velocidad + 20);
+	if(stopAndPlay) escena.stop();
+	rebotar(object, rebotes, distancia, velocidad, TIEMPOGOLPE, 0);
+	if(stopAndPlay) setTimeout(() => {
+		escena.play();
+	}, tiempoTotal);
+	if(reset) setTimeout(() => {
+		object.y = object.y - distancia;
+	}, tiempoTotal);
+}
+function rebotar(object, rebotes, distancia, velocidad, tiempoGolpe, reboteActual) {	
+	reboteActual++;
+	const ease1 = createjs.Ease.sineIn;
+	const ease2 = createjs.Ease.sineOut;
+	const TIEMPODES = velocidad;
+	const TIMEMPOGOLPE = velocidad / 10;
+	desplazarY(object, distancia, TIEMPODES, ease1);
+	setTimeout(() => golpear(object), TIEMPODES);
+	if(reboteActual != rebotes) {
+		setTimeout(() => desplazarY(object, -distancia / 2, TIEMPODES, ease2), TIEMPODES + TIMEMPOGOLPE + 20);
+		setTimeout(() => rebotar(object, rebotes, distancia / 2, velocidad, tiempoGolpe, reboteActual), 2* TIEMPODES + TIMEMPOGOLPE + 20);	
+	}
+}
+function desplazarY(object, distancia, tiempo, ease) {
+	createjs.Tween.get(object).to({y: object.y + distancia}, tiempo, ease);	
+}
+function golpear(object) {
+	const scaleOriginal = object.scaleY;
+	createjs.Tween.get(object).to({scaleY: object.scaleY / 1.5, regY: object.regY}, 1).call(function() {
+		setTimeout(() => createjs.Tween.get(object).to({scaleY: scaleOriginal}, 10), 50);
+	});
+}</script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("B6F4DC1C4DE12A4798DF7A49CAC40457");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+  const progressBar = document.getElementById("progress");
+	const loadingText = document.body.getElementsByTagName("p")[0];
+  loader.on("progress", (e) => {
+    let progreso = Math.floor(e.progress * 100);
+    progressBar.style.width = `${progreso}%`;
+    loadingText.innerHTML = `Cargando... (${progreso}%)`;
+  }); 
+	loader.installPlugin(createjs.Sound);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+  const preloaderDiv = document.getElementById("preloader");
+  preloaderDiv.style.display = 'none';
+  canvas.style.display = 'block';
+	exportRoot = new lib.Balam();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	AdobeAn.makeResponsive(true,'both',false,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+function playSound(id, loop, offset) {
+	return createjs.Sound.play(id, {'interrupt':createjs.Sound.INTERRUPT_EARLY, 'loop': loop, 'offset': offset});}
+</script>
+</head>
+<body onload="init();" style="margin:0px;">
+	<div id="animation_container" style="background-color:rgb(255, 255, 255); width:850px; height:500px">
+		<canvas id="canvas" width="850" height="500" style="position: absolute; display: none; background-color:rgb(255, 255, 255);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:850px; height:500px; position: absolute; left: 0px; top: 0px; display: none;">
+		</div>
+		<div id="preloader" class="container">
+			<div id="progressbar">
+				<div id="progress"></div>
+			</div>
+			<p>Cargando...</p>
+			<p>Creado por el equipo EDO</p>
+		</div>
+	</div>
+</body>
+</html>

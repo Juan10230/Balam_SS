@@ -1,0 +1,26 @@
+Primero: Instalar fuentes de manera local, deben de estar instaladas:
+	- Gluten
+	- Montserrat
+
+----- El precargador se encuentra ya agregado, pero las instrucciones siguientes son en caso de que sea necesario volverlo a agregar -----
+1. Copiar la carpeta "extras" en dentro de la carpeta "balam"
+2. En Balam.html añadir la etiqueta link en head: <link rel="stylesheet" href="extras/style.css" type="text/css">
+3. Reemplazar el contenido de Body de Balam.html por el contenido de ./extras/Preload.html
+4. Abrir ./extras/preload.js y realizar las instrucciones indicadas en este.
+
+//NOTAS: Los pasos 5 y 6 son en caso de que se tengan que definir las fuentes de manera manual
+
+5. Copiar el siguiente código dentro de head:
+<script src="./extras/fonts.js"></script>
+<script>
+	const gFontsFamilies = ["Gluten", "Didact Gothic", "Montserrat"];
+</script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:regular&subset=latin">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Gluten:wght@900&display=swap" >
+
+6.Dentro de balam.js, buscar todos los textArea definidos y reemplazarlos por los descritos en "Orden de tipo de letra de textos.txt" en el orden indicado
+
+
+---- PARA agregar texto en español -----
+Dentro de BALAM.js buscar todas las constantes con nombre textoEsp para cada escena y agregar los dialogos correspondientes.
