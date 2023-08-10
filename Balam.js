@@ -1,5 +1,5 @@
 (function (cjs, an) {
-
+ 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
@@ -5344,6 +5344,51 @@ if (reversed == null) { reversed = false; }
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,107.6,99.9);
 
+(lib.Exit = function(mode,startPosition,loop,reversed) {
+    if (loop == null) { loop = true; }
+    if (reversed == null) { reversed = false; }
+    var props = new Object();
+    props.mode = mode;
+    props.startPosition = startPosition;
+    props.labels = {};
+    props.loop = loop;
+    props.reversed = reversed;
+    cjs.MovieClip.apply(this,[props]);
+    
+    // exit
+    this.shape = new cjs.Shape();
+	this.shape.graphics.setStrokeStyle(20, "round").beginStroke("#616A6B").mt(-24, 24).lt(22, -24);
+	this.shape.graphics.setStrokeStyle(20, "round").beginStroke("#616A6B").mt(-24, -24).lt(22, 24);
+    this.shape.setTransform(33.625, 21.125);
+
+    this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+    this._renderFirstFrame();
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-34, -2, 68, 44);
+
+(lib.BotonExit = function(mode,startPosition,loop,reversed) {
+	if (loop == null) { loop = true; }
+	if (reversed == null) { reversed = false; }
+		var props = new Object();
+		props.mode = mode;
+		props.startPosition = startPosition;
+		props.labels = {};
+		props.loop = loop;
+		props.reversed = reversed;
+		cjs.MovieClip.apply(this,[props]);
+	
+		// boton_exit
+		this.instance = new lib.CachedBmp_12();
+		this.instance.setTransform(0,0,0.4303,0.4303);
+	
+		this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+	
+		this._renderFirstFrame();
+	
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0,107.6,99.9);
 
 (lib.USA = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
@@ -7876,7 +7921,7 @@ if (reversed == null) { reversed = false; }
 		var dialogo = _this.textAreaD;
 		
 		const dialogoIng = '"Sorry! I\'m sorry, please"';
-		const dialogoEsp = '¡Perdóooooooon! ¡Perdón!, lo lamento, por favor…';
+		const dialogoEsp = '¡Perdón! ¡Perdón!, lo lamento, por favor…';
 		const textoIng = 'Huge tears trickled from his eyes, he covered his head with his claws, expecting the worst.';
 		const textoEsp = 'Enormes lágrimas escurrían de sus ojos, cubría con sus garras su cabeza esperando lo peor.';
 		
@@ -12165,12 +12210,15 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
+
 	// Capa_1
 	this.instance = new lib.Flecha("synched",0);
 	this.instance.setTransform(54.35,45.75,0.8257,0.8257,0,0,0,33.5,20.7);
+	
 
 	this.instance_1 = new lib.Boton("synched",0);
 	this.instance_1.setTransform(53.6,49.8,1,1,0,0,0,53.6,49.8);
+
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1,p:{regY:49.8,scaleX:1,scaleY:1,x:53.6,y:49.8}},{t:this.instance,p:{regY:20.7,scaleX:0.8257,scaleY:0.8257,x:54.35,y:45.75}}]}).to({state:[{t:this.instance_1,p:{regY:49.9,scaleX:0.8378,scaleY:0.8378,x:54.1,y:49.4}},{t:this.instance,p:{regY:20.6,scaleX:0.6917,scaleY:0.6917,x:54.75,y:45.9}}]},2).wait(1));
 
@@ -12179,6 +12227,35 @@ if (reversed == null) { reversed = false; }
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,107.6,99.9);
 
+
+(lib.Control_Transicion2 = function(mode,startPosition,loop,reversed) {
+	if (loop == null) { loop = true; }
+	if (reversed == null) { reversed = false; }
+		var props = new Object();
+		props.mode = mode;
+		props.startPosition = startPosition;
+		props.labels = {};
+		props.loop = loop;
+		props.reversed = reversed;
+		cjs.MovieClip.apply(this,[props]);
+	
+		// Capa_1
+		this.instance = new lib.Exit("synched",0);
+		this.instance.setTransform(54.35,45.75,0.8257,0.8257,0,0,0,33.5,200.7);
+		
+	
+		this.instance_1 = new lib.Boton("synched",0);
+		this.instance_1.setTransform(53.6,49.8,1,1,0,0,0,53.6,49.8);
+	
+		this.timeline.addTween(cjs.Tween.get({}).to({ state: [{ t: this.instance_1, p: { regY: 49.8, scaleX: 1, scaleY: 1, x: 53.6, y: 49.8 } }, { t: this.instance, p: { regY: 20.7, scaleX: 0.8257, scaleY: 0.8257, x: 54.35, y: 45.75 } }] }).to({ state: [{ t: this.instance_1, p: { regY: 49.9, scaleX: 0.8378, scaleY: 0.8378, x: 54.1, y: 49.4 } }, { t: this.instance, p: { regY: 20.6, scaleX: 0.6917, scaleY: 0.6917, x: 54.75, y: 45.9 } }] }, 2).call(function () {
+			this.gotoAndPlay(2); // Regresar al fotograma 2
+		}).wait(1));
+	
+		this._renderFirstFrame();
+	
+	}).prototype = p = new cjs.MovieClip();
+	p.nominalBounds = new cjs.Rectangle(0,0,107.6,99.9);
+	
 
 (lib.Perro_2 = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
@@ -14006,16 +14083,37 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// timeline functions:
+	//Al dar click se pasa al siguiente frame
 	this.frame_0 = function() {
 		var _this = this;
 		var botonDerecha = _this.botonDerecha;
+		var boton_exit = _this.botonExit;
 		
 		_this.stop();
 		
 		botonDerecha.on('click', function() {
 			_this.play();
 		});
+		boton_exit.on('click', function() {
+			_this.gotoAndPlay(0);
+			_this.stop();
+		});
+		
 	}
+
+
+	this.frame_10 = function() {
+		var _this = this;
+		var boton_exit = _this.botonExit;
+		
+		_this.stop();
+		
+		boton_exit.on('click', function() {
+			_this.gotoAndPlay(0);
+		});
+		_this.stop();
+	}
+
 	this.frame_58 = function() {
 		var _this = this;
 		stopAndRemove(_this);
@@ -14384,6 +14482,7 @@ if (reversed == null) { reversed = false; }
 	this.instance.alpha = 0;
 	this.instance._off = true;
 	new cjs.ButtonHelper(this.instance, 0, 1, 2);
+	
 
 	this.botonIzquierda = new lib.Control_Transicion();
 	this.botonIzquierda.name = "botonIzquierda";
@@ -14685,13 +14784,21 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(54).to({_off:false},0).to({_off:true,alpha:1},4,cjs.Ease.get(0.89)).wait(3541));
 	this.timeline.addTween(cjs.Tween.get(this.botonIzquierda59).wait(3538).to({_off:false},0).to({_off:true,alpha:0},4,cjs.Ease.get(0.89)).wait(57));
 
-	// Boton_1
+	// Boton_1 Es elque se muestra en la diapositiva menu 
+	
 	this.botonDerecha = new lib.Control_Transicion();
 	this.botonDerecha.name = "botonDerecha";
 	this.botonDerecha.setTransform(765.3,381.9,1.0997,1.0997,0,0,0,53.6,49.8);
 	new cjs.ButtonHelper(this.botonDerecha, 0, 1, 2);
-
 	this.timeline.addTween(cjs.Tween.get(this.botonDerecha).to({regX:53.7,scaleX:0.7392,scaleY:0.7388,x:778.4,y:434.35},58,cjs.Ease.get(0.89)).wait(3480).to({alpha:0},4,cjs.Ease.get(0.89)).to({_off:true},1).wait(56));
+
+	//Boton exit que regresa al menu.
+	this.botonExit = new lib.Control_Transicion2();
+	this.botonExit.name = "botonExit";
+	this.botonExit.setTransform(765.3,-60.9,1.0997,1.0997,0,0,0,53.6,49.8);
+	new cjs.ButtonHelper(this.botonExit, 0, 1, 2);
+	this.timeline.addTween(cjs.Tween.get(this.botonExit).to({regX:53.7,scaleX:0.7392,scaleY:0.7388,x:778.4,y:65},58,cjs.Ease.get(0.89)).wait(3480).to({alpha:0},40,cjs.Ease.get(0.89)).to({_off:true},1).wait(56));
+
 
 	// Escena_2
 	this.instance_1 = new lib.Escena_2();
@@ -14702,16 +14809,15 @@ if (reversed == null) { reversed = false; }
 	this.escena2.name = "escena2";
 	this.escena2.setTransform(440.9,250,1,1,0,0,0,440.9,250);
 	this.escena2._off = true;
-
 	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(1).to({_off:false},0).to({_off:true,y:250},57,cjs.Ease.get(0.89)).wait(3541));
 	this.timeline.addTween(cjs.Tween.get(this.escena2).wait(1).to({_off:false},57,cjs.Ease.get(0.89)).wait(1).to({y:-250},58,cjs.Ease.get(0.81)).to({_off:true},1).wait(3481));
 
 	// Escena_1
 	this.instance_2 = new lib.Escena_1();
 	this.instance_2.setTransform(425.9,250.5,1,1,0,0,0,425.9,250.5);
-
 	this.timeline.addTween(cjs.Tween.get(this.instance_2).to({y:-249.5},57,cjs.Ease.get(0.85)).to({_off:true},1).wait(3541));
 
+	
 	// Escena_3
 	this.instance_3 = new lib.Escena_3();
 	this.instance_3.setTransform(355.8,750,1,1,0,0,0,355.8,250);

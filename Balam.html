@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="authoring-tool" content="Adobe_Animate_CC">
-<title>Balam</title>
+<title>Balam</title> 
 
 <style>
   #animation_container, #preloader {
@@ -11,13 +11,14 @@
 	margin:auto;
 	left:0;right:0;
 	top:0;bottom:0;
-  }
+  }        
 </style>
 
 <link rel="stylesheet" href="extras/style.css" type="text/css">
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
 <script src="Balam.js?1687502935675"></script>
-<script>
+<script> 
+	
 // Global Scripts
 	/*----------CONFIGURACION DE IDIOMA----------*/
 const ESP = true;
@@ -26,6 +27,7 @@ var idioma = ENG;
 function setText(textArea, textIngles, textEspaniol) {
 	textArea.text = idioma === ENG ? textIngles : textEspaniol;
 }
+
 /*----------CONTROL DE REPRODUCCION DE ESCENAS----------*/
 function stopAndRemove(target) {
 	target.removeAllEventListeners('tick');
@@ -66,7 +68,7 @@ function rotarIzquierdaDerecha(objeto, escena, velocidad, tope) {
 		}
 		toRight ? objeto.rotation -=velocidad : objeto.rotation += velocidad;
 	});
-}
+} 
 function rotarIzquierdaDerechaAuto(objeto, escena, velocidad, tope, times) {
 	escena.stop();
 	var toRight = false;
@@ -155,6 +157,7 @@ function golpear(object) {
 }</script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+
 function init() {
 	canvas = document.getElementById("canvas");
 	anim_container = document.getElementById("animation_container");
@@ -163,7 +166,8 @@ function init() {
 	var lib=comp.getLibrary();
 	var loader = new createjs.LoadQueue(false);
   const progressBar = document.getElementById("progress");
-	const loadingText = document.body.getElementsByTagName("p")[0];
+	const loadingText = document.body.getElementsByTagName("p")[0]; 
+
   loader.on("progress", (e) => {
     let progreso = Math.floor(e.progress * 100);
     progressBar.style.width = `${progreso}%`;
@@ -175,12 +179,13 @@ function init() {
 	var lib=comp.getLibrary();
 	loader.loadManifest(lib.properties.manifest);
 }
-function handleFileLoad(evt, comp) {
+function handleFileLoad(evt, comp)
+ {
 	var images=comp.getImages();	
 	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
 }
 function handleComplete(evt,comp) {
-	var lib=comp.getLibrary();
+	var lib=comp.getLibrary(); 
 	var ss=comp.getSpriteSheet();
 	var queue = evt.target;
 	var ssMetadata = lib.ssMetadata;
@@ -203,9 +208,10 @@ function handleComplete(evt,comp) {
 	fnStartAnimation();
 }
 function playSound(id, loop, offset) {
-	return createjs.Sound.play(id, {'interrupt':createjs.Sound.INTERRUPT_EARLY, 'loop': loop, 'offset': offset});}
+	return createjs.Sound.play(id, {'interrupt':createjs.Sound.INTERRUPT_EARLY, 'loop': loop, 'offset': offset});} 
 </script>
 </head>
+
 <body onload="init();" style="margin:0px;">
 	<div id="animation_container" style="background-color:rgb(255, 255, 255); width:850px; height:500px">
 		<canvas id="canvas" width="850" height="500" style="position: absolute; display: none; background-color:rgb(255, 255, 255);"></canvas>
@@ -215,7 +221,7 @@ function playSound(id, loop, offset) {
 			<div id="progressbar">
 				<div id="progress"></div>
 			</div>
-			<p>Cargando...</p>
+			<p>Cargandooo...</p>
 			<p>Creado por el equipo EDO</p>
 		</div>
 	</div>
