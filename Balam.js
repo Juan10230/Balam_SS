@@ -6768,18 +6768,60 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Titulo
-	this.autores = new cjs.Text("- Ruth González Cruz\n- María del Carmen Nieves Hernández\n- Jessica Rodriguez Toriz\n- Heriberto Abraham Alonso Meléndez\n", "bold 18px 'Gluten Black'", "#F6DC4E");
-	this.autores.name = "autores";
-	this.autores.lineHeight = 27;
-	this.autores.lineWidth = 564;
-	this.autores.parent = this;
-	this.autores.setTransform(-159.65,-141.95);
-
 	this.instance = new lib.CachedBmp_142();
 	this.instance.setTransform(-174.95,-233.4,0.5,0.5);
+ 
+// Dividir el texto en líneas separadas
+const lineasTexto = [
+  "Dirección de proyecto:",
+  "Mara Edna Serrano Acuña",
+  "Selección y adaptación de cuento:",
+  "Salvador Aguilar Torres",
+  "Abigail Ramirez Beltrán",
+  "Ilustración:",
+  "Abigail Ramirez Beltrá",
+  "Programación y Animación:",
+  "Heriberto Abraham Alonso Meléndez",
+  "Juan Pérez Luis",
+  "Edición de imágenes:",
+  "Laura Steffania Oliver Toxqui",
+  "Tania Jatziri Diaz Ojeda",
+  "Ruth González Cruz",
+  "María del Carmen Nieves Hernández",
+  "Jessica Rodríguez Toriz",
+  "Apoyo en montaje:",
+  "Jose Luis Avelino Otero"
+];
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance},{t:this.autores}]}).wait(1));
+// Coordenadas iniciales para el primer objeto de texto
+let x = -159.65;
+let y = -160.95;
 
+// Tamaño de fuente y tipografía para cada línea de texto
+const tamanosFuente = ["20px", "15px", "20px", "15px", "15px", "20px", "15px", "20px", "15px", "15px", "20px", "15px", "15px", "15px", "15px", "15px", "20px", "15px"];
+const tipografias = ["'Dosis'", "'Neucha'", "'Dosis'", "'Neucha'", "'Neucha'", "'Dosis'", "'Neucha'", "'Dosis'", "'Neucha'", "'Neucha'", "'Dosis'", "'Neucha'", "'Neucha'", "'Neucha'", "'Neucha'", "'Neucha'", "'Dosis'", "'Neucha'"];
+
+// Crear objetos de texto individuales para cada línea
+for (let i = 0; i < lineasTexto.length; i++) {
+  const linea = lineasTexto[i];
+  const tamanoFuente = tamanosFuente[i];
+  const tipografia = tipografias[i];
+  
+  const texto = new cjs.Text(linea, `${tamanoFuente} ${tipografia}`, "#F6DC4E");
+  texto.name = `linea${i + 1}`;
+  texto.lineHeight = parseInt(tamanoFuente) + 5; // Ajusta el espaciado vertical entre líneas si es necesario
+  texto.lineWidth = 564;
+  texto.setTransform(x, y);
+  
+  this.timeline.addTween(cjs.Tween.get(texto).wait(1));
+  
+  // Actualizar las coordenadas para el siguiente objeto de texto
+  y += texto.lineHeight;
+}
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).wait(1));
+
+
+	
 	// Fondo_transparencia
 	this.instance_1 = new lib.Textura("synched",0);
 	this.instance_1.setTransform(125.2,-0.05,0.4407,0.6602,0,0,0,681.1,378.6);
@@ -12247,7 +12289,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,107.6,99.9);
 		this.instance_1 = new lib.Boton("synched",0);
 		this.instance_1.setTransform(53.6,49.8,1,1,0,0,0,53.6,49.8);
 	
-		this.timeline.addTween(cjs.Tween.get({}).to({ state: [{ t: this.instance_1, p: { regY: 49.8, scaleX: 1, scaleY: 1, x: 53.6, y: 49.8 } }, { t: this.instance, p: { regY: 20.7, scaleX: 0.8257, scaleY: 0.8257, x: 54.35, y: 45.75 } }] }).to({ state: [{ t: this.instance_1, p: { regY: 49.9, scaleX: 0.8378, scaleY: 0.8378, x: 54.1, y: 49.4 } }, { t: this.instance, p: { regY: 20.6, scaleX: 0.6917, scaleY: 0.6917, x: 54.75, y: 45.9 } }] }, 2).call(function () {
+		this.timeline.addTween(cjs.Tween.get({}).to({ state: [{ t: this.instance_1, p: { regY: 49.8, scaleX: 0.5, scaleY: 0.5, x: 85.6, y: 20.8 } }, { t: this.instance, p: { regY: 20.7, scaleX: 0.4, scaleY: 0.4, x: 85.35, y: 18 } }] }).to({ state: [{ t: this.instance_1, p: { regY: 49.9, scaleX: 0.8378, scaleY: 0.8378,  x: 85.6, y: 20.8 } }, { t: this.instance, p: { regY: 20.6, scaleX: 0.6917, scaleY: 0.6917, x: 85.35, y: 18} }] }, 2).call(function () {
 			this.gotoAndPlay(2); // Regresar al fotograma 2
 		}).wait(1));
 	
@@ -14098,7 +14140,7 @@ if (reversed == null) { reversed = false; }
 			_this.gotoAndPlay(0);
 			_this.stop();
 		});
-		
+		/* 99969661 */
 	}
 
 

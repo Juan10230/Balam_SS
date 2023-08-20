@@ -165,14 +165,14 @@ function init() {
 	var comp=AdobeAn.getComposition("B6F4DC1C4DE12A4798DF7A49CAC40457");
 	var lib=comp.getLibrary();
 	var loader = new createjs.LoadQueue(false);
-  const progressBar = document.getElementById("progress");
+	const progressBar = document.getElementById("progress");
 	const loadingText = document.body.getElementsByTagName("p")[0]; 
 
-  loader.on("progress", (e) => {
-    let progreso = Math.floor(e.progress * 100);
-    progressBar.style.width = `${progreso}%`;
-    loadingText.innerHTML = `Cargando... (${progreso}%)`;
-  }); 
+	loader.on("progress", (e) => {
+		let progreso = Math.floor(e.progress * 100);
+		progressBar.style.width = `${progreso}%`;
+		loadingText.innerHTML = `Cargando... (${progreso}%)`;
+	}); 
 	loader.installPlugin(createjs.Sound);
 	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
 	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
